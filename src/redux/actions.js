@@ -12,6 +12,24 @@ export const addAlbumReview = (album) => {
     }
 }
 
+export const loadAlbumReviews= () =>{
+    return async (dispatch) =>{
+        const dbRef= ref(db)
+        return await get(child(dbRef, 'albums'))
+            .then((snapshot)=>{
+                if(snapshot.exists()){
+                    let albums = [];
+                    snapshot.forEach((childSnapshot)=>{
+                        albums.push(childSnapshot.val())
+                    })
+                    dispatch(loadAlbums(albums))
+                } else{
+                    console.log('No data available');
+                }
+            })
+    }
+}
+
 
 export const addAlbum = (album) =>{
     return{
@@ -19,3 +37,10 @@ export const addAlbum = (album) =>{
         album
     }
 } 
+
+export const loadAlbums= (albums) =>{
+    return{
+        type: 'LOAD_ALBUMS',
+        albums
+    }
+}

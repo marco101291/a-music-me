@@ -12,11 +12,11 @@ const NavBar= (props) =>{
         <>
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
-                    <Navbar.Brand href="/home">A music me</Navbar.Brand>
+                    <Navbar.Brand href="/">A music me</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto" >
-                            <Nav.Link href="/home">Home</Nav.Link>
+                            <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/Albums">Albums</Nav.Link>
                             <Nav.Link href="/Playlists">Playlists</Nav.Link>
                             <NavDropdown title="Post" id="basic-nav-dropdown">

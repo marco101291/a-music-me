@@ -35,6 +35,7 @@ const AddAlbum = (props) => {
 
         if(album){
             props.addAlbumReview(album);
+            props.history('/')
         }
         
 
